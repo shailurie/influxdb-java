@@ -166,7 +166,9 @@ public class InfluxDBTest {
 		String dbName = "write_unittest_" + System.currentTimeMillis();
 		this.influxDB.createDatabase(dbName);
 
+	
 		BatchPoints batchPoints = BatchPoints.database(dbName).tag("async", "true").retentionPolicy("default").build();
+		
 		Point point1 = Point
 				.measurement("cpu")
 				.tag("atag", "test")
